@@ -1,0 +1,1398 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ソフトクリーム映えPJ 授業資料まとめ｜福岡ECO × 福岡市動物公園</title>
+<style>
+  :root {
+    --green-dark: #1b4332;
+    --green-mid: #2d6a4f;
+    --green-light: #52b788;
+    --green-pale: #d8f3dc;
+    --accent: #f18f01;
+    --accent-pale: #fff3cd;
+    --red: #c0392b;
+    --red-pale: #fdecea;
+    --purple: #6c3483;
+    --purple-pale: #f3e8fb;
+    --blue: #1a5276;
+    --blue-pale: #d6eaf8;
+    --brown: #5d4037;
+    --brown-pale: #efebe9;
+    --bg: #f4f6f4;
+    --card: #ffffff;
+    --border: #dde8dd;
+    --text: #1b2520;
+    --text-light: #4a5e52;
+    --shadow: 0 2px 12px rgba(0,0,0,0.08);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Meiryo", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  /* ── ヘッダー ── */
+  .site-header {
+    background: var(--green-dark);
+    color: #fff;
+    padding: 28px 32px 22px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  }
+  .site-header h1 {
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: .04em;
+    margin-bottom: 4px;
+  }
+  .site-header .meta {
+    font-size: 12px;
+    color: #a8d5b5;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .print-btn {
+    margin-left: auto;
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.5);
+    color: #fff;
+    padding: 4px 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+    font-family: inherit;
+  }
+  .print-btn:hover { background: rgba(255,255,255,0.15); }
+
+  /* ── ナビゲーション ── */
+  .nav-bar {
+    background: #fff;
+    border-bottom: 2px solid var(--border);
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 0 16px;
+    position: sticky;
+    top: 74px;
+    z-index: 99;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  }
+  .nav-bar a {
+    display: inline-block;
+    padding: 10px 14px;
+    font-size: 12px;
+    color: var(--text-light);
+    text-decoration: none;
+    border-bottom: 3px solid transparent;
+    margin-bottom: -2px;
+    transition: all .15s;
+  }
+  .nav-bar a:hover { color: var(--green-mid); border-bottom-color: var(--green-light); }
+  .nav-bar .tag {
+    display: inline-block;
+    font-size: 10px;
+    border-radius: 3px;
+    padding: 1px 5px;
+    margin-right: 4px;
+    vertical-align: middle;
+    font-weight: 700;
+    color: #fff;
+  }
+
+  /* ── メインコンテンツ ── */
+  .main { max-width: 1000px; margin: 0 auto; padding: 28px 20px 80px; }
+
+  /* ── セクションカード ── */
+  .doc-section {
+    background: var(--card);
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    margin-bottom: 32px;
+    overflow: hidden;
+  }
+  .doc-header {
+    padding: 18px 28px 14px;
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    border-bottom: 1px solid var(--border);
+  }
+  .doc-num {
+    font-size: 11px;
+    font-weight: 700;
+    background: var(--green-pale);
+    color: var(--green-mid);
+    border-radius: 4px;
+    padding: 2px 8px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .doc-title-block h2 {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--green-dark);
+    margin-bottom: 4px;
+  }
+  .doc-title-block .subtitle { font-size: 12px; color: var(--text-light); }
+  .doc-badge {
+    margin-left: auto;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 20px;
+    white-space: nowrap;
+  }
+  .badge-plan    { background: var(--blue-pale);   color: var(--blue); }
+  .badge-script  { background: var(--purple-pale); color: var(--purple); }
+  .badge-ws      { background: var(--accent-pale); color: #b36800; }
+  .badge-check   { background: var(--green-pale);  color: var(--green-mid); }
+  .badge-internal{ background: var(--brown-pale);  color: var(--brown); }
+  .badge-eval    { background: var(--red-pale);    color: var(--red); }
+
+  .doc-body { padding: 24px 28px; }
+
+  /* ── タイポグラフィ ── */
+  .doc-body h3 {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--green-dark);
+    margin: 22px 0 10px;
+    padding-bottom: 4px;
+    border-bottom: 1px solid var(--green-pale);
+  }
+  .doc-body h4 {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--green-mid);
+    margin: 16px 0 8px;
+  }
+  .doc-body p { margin-bottom: 10px; }
+  .doc-body ul, .doc-body ol { padding-left: 20px; margin-bottom: 10px; }
+  .doc-body li { margin-bottom: 4px; }
+  .doc-body strong { font-weight: 700; }
+  .doc-body em { font-style: italic; color: var(--text-light); }
+
+  /* ── テーブル ── */
+  .doc-body table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 12px 0 16px;
+    font-size: 13px;
+  }
+  .doc-body th {
+    background: var(--green-pale);
+    color: var(--green-dark);
+    padding: 8px 10px;
+    text-align: left;
+    font-weight: 700;
+    border: 1px solid var(--border);
+  }
+  .doc-body td {
+    padding: 7px 10px;
+    border: 1px solid var(--border);
+    vertical-align: top;
+  }
+  .doc-body tr:nth-child(even) td { background: #f9fbf9; }
+
+  /* ── コードブロック / 記入欄 ── */
+  .fill-box {
+    background: #f8faf8;
+    border: 1px dashed var(--green-light);
+    border-radius: 6px;
+    padding: 12px 16px;
+    margin: 8px 0 14px;
+    font-size: 13px;
+    color: var(--text-light);
+    white-space: pre-wrap;
+    line-height: 2;
+  }
+  .formula-box {
+    background: var(--accent-pale);
+    border-left: 4px solid var(--accent);
+    border-radius: 0 6px 6px 0;
+    padding: 12px 16px;
+    margin: 10px 0;
+    font-size: 14px;
+    font-weight: 700;
+    font-family: monospace;
+  }
+
+  /* ── 注意・ヒントボックス ── */
+  .note-box {
+    background: var(--blue-pale);
+    border-left: 4px solid var(--blue);
+    border-radius: 0 6px 6px 0;
+    padding: 10px 14px;
+    margin: 12px 0;
+    font-size: 13px;
+    color: var(--blue);
+  }
+  .warn-box {
+    background: var(--red-pale);
+    border-left: 4px solid var(--red);
+    border-radius: 0 6px 6px 0;
+    padding: 10px 14px;
+    margin: 12px 0;
+    font-size: 13px;
+    color: var(--red);
+  }
+  .tip-box {
+    background: var(--green-pale);
+    border-left: 4px solid var(--green-light);
+    border-radius: 0 6px 6px 0;
+    padding: 10px 14px;
+    margin: 12px 0;
+    font-size: 13px;
+    color: var(--green-dark);
+  }
+
+  /* ── スクリプト用スタイル ── */
+  .script-speaker {
+    display: inline-block;
+    font-weight: 700;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 3px;
+    margin-right: 6px;
+  }
+  .sp-sekiguchi { background: var(--green-pale); color: var(--green-dark); }
+  .sp-work { background: var(--accent-pale); color: #b36800; }
+  .sp-slide { background: var(--purple-pale); color: var(--purple); }
+  .script-block {
+    margin: 10px 0;
+    padding: 10px 14px;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    font-size: 13px;
+    line-height: 1.9;
+  }
+  .time-block {
+    background: var(--green-dark);
+    color: #fff;
+    padding: 6px 16px;
+    margin: 20px -28px 14px;
+    font-size: 13px;
+    font-weight: 700;
+  }
+
+  /* ── フェーズバナー ── */
+  .phase-banner {
+    background: linear-gradient(135deg, var(--green-dark), var(--green-mid));
+    color: #fff;
+    padding: 12px 28px;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: .05em;
+    border-radius: 10px;
+    margin: 36px 0 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  /* ── チェックボックス ── */
+  .check { color: var(--green-mid); font-size: 15px; }
+
+  /* ── 区切り線 ── */
+  .doc-body hr { border: none; border-top: 1px solid var(--border); margin: 18px 0; }
+
+  /* ── 内部資料バナー ── */
+  .internal-banner {
+    background: var(--brown-pale);
+    border: 1px solid #bcaaa4;
+    border-radius: 6px;
+    padding: 8px 14px;
+    font-size: 12px;
+    color: var(--brown);
+    font-weight: 700;
+    margin-bottom: 16px;
+  }
+
+  /* ── ページトップボタン ── */
+  .back-top {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    background: var(--green-mid);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+  }
+
+  /* ── 印刷 ── */
+  @media print {
+    .site-header, .nav-bar, .back-top, .print-btn { display: none !important; }
+    .doc-section { break-inside: avoid; box-shadow: none; border: 1px solid #ccc; }
+    .time-block { margin: 20px 0 14px; }
+    body { font-size: 11px; }
+  }
+
+  /* ── レスポンシブ ── */
+  @media (max-width: 640px) {
+    .doc-body { padding: 16px; }
+    .doc-header { padding: 14px 16px; flex-wrap: wrap; }
+    .doc-badge { margin-left: 0; }
+    .time-block { margin: 20px -16px 14px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ヘッダー -->
+<header class="site-header">
+  <h1>🍦 ソフトクリーム映えPJ 授業資料まとめ</h1>
+  <div class="meta">
+    <span>福岡ECO動物海洋専門学校 × 福岡市動物公園</span>
+    <span>2026年5月〜7月</span>
+    <span>担当：橋本花織（ATARAYO）</span>
+    <button class="print-btn" onclick="window.print()">🖨 印刷</button>
+  </div>
+</header>
+
+<!-- ナビゲーション -->
+<nav class="nav-bar">
+  <a href="#s00"><span class="tag" style="background:var(--blue)">00</span>全体計画</a>
+  <a href="#s01"><span class="tag" style="background:var(--purple)">01</span>スクリプト5/9</a>
+  <a href="#s02"><span class="tag" style="background:#b36800">02</span>WS発散</a>
+  <a href="#s03"><span class="tag" style="background:var(--brown)">03</span>宿題管理</a>
+  <a href="#s04"><span class="tag" style="background:#b36800">04</span>WS原価計算</a>
+  <a href="#s04b"><span class="tag" style="background:#e67e22">04b</span>WS宿題PR</a>
+  <a href="#s05"><span class="tag" style="background:var(--green-mid)">05</span>撮影アドバイス</a>
+  <a href="#s06"><span class="tag" style="background:var(--brown)">06</span>視察管理</a>
+  <a href="#s07"><span class="tag" style="background:var(--red)">07</span>評価シート</a>
+  <a href="#s08"><span class="tag" style="background:var(--purple)">08</span>スクリプトコンペ</a>
+  <a href="#s09"><span class="tag" style="background:var(--green-mid)">09</span>視察調査</a>
+  <a href="#s10"><span class="tag" style="background:var(--green-mid)">10</span>オペレーション</a>
+</nav>
+
+<main class="main">
+
+<!-- =============================================== -->
+<!-- 00 全体授業計画書 -->
+<!-- =============================================== -->
+<div class="phase-banner">📋 フェーズ0：プロジェクト全体設計</div>
+
+<section class="doc-section" id="s00">
+  <div class="doc-header">
+    <div class="doc-num">00</div>
+    <div class="doc-title-block">
+      <h2>全体授業計画書</h2>
+      <div class="subtitle">ソフトクリーム映えPJ 設計書 ／ 作成：2026年4月28日</div>
+    </div>
+    <span class="doc-badge badge-plan">計画書</span>
+  </div>
+  <div class="doc-body">
+
+    <h3>プロジェクト概要</h3>
+    <table>
+      <tr><th>項目</th><th>内容</th></tr>
+      <tr><td>プロジェクト名</td><td>ソフトクリーム映えPJ（福岡ECO × 福岡市動物公園）</td></tr>
+      <tr><td>連携先</td><td>福岡市動物公園 Café Rassembler</td></tr>
+      <tr><td>参加学生</td><td>約60名（動物専攻）</td></tr>
+      <tr><td>担当教員</td><td>関口陽介（オリエンテーション・進行）、上園先生（食品・原価）</td></tr>
+      <tr><td>橋本の役割</td><td>授業資料作成・PR設計・広報支援</td></tr>
+      <tr><td>最終ゴール</td><td>動物園カフェで実際に販売されるソフトクリームのコンペ入賞</td></tr>
+      <tr><td>PR窓口</td><td>赤岩先生（学生・関係者コメント取得の窓口）</td></tr>
+    </table>
+
+    <h3>全体スケジュール</h3>
+    <table>
+      <tr><th>#</th><th>日程</th><th>テーマ</th><th>担当</th><th>橋本参加</th></tr>
+      <tr><td>第1回①</td><td><strong>5/9（土）2限</strong></td><td>AQUA・動物園合同オリエンテーション</td><td>AQUA・動物園</td><td>資料提供のみ</td></tr>
+      <tr><td>第1回②</td><td><strong>5/9（土）3限</strong></td><td>マーケティング講義＋アイデア発散</td><td>関口先生</td><td>資料提供のみ</td></tr>
+      <tr><td>第2回</td><td><strong>5/14（木）4限</strong></td><td>食品基礎：原価・衛生・食品法規</td><td><strong>上園先生のみ</strong>（関口・橋本なし）</td><td><strong>なし</strong></td></tr>
+      <tr><td>第3回</td><td><strong>5/23（土）</strong></td><td>現地視察：動物園レストランでマーケティング調査</td><td><strong>赤岩先生（現地引率）</strong>（関口・橋本なし）</td><td><strong>なし</strong></td></tr>
+      <tr><td>第4回</td><td><strong>6/13（土・予定）</strong></td><td>アイデア収束＋コンセプトシート完成</td><td><strong>関口のみ</strong>（土曜日・橋本なし）</td><td><strong>なし</strong></td></tr>
+      <tr><td>第5回</td><td><strong>6/16〜17 14:00〜16:00</strong></td><td><strong>ジケイレストランにて試作＋撮影</strong></td><td>関口（現地）</td><td>Zoom参加</td></tr>
+      <tr><td>第6回</td><td><strong>6/19（金）1限</strong></td><td>プレゼンチェック①</td><td>関口＋橋本</td><td>Zoom参加</td></tr>
+      <tr><td>第7回</td><td><strong>6/23（火）3〜4限</strong></td><td>プレゼンチェック②</td><td>関口＋橋本</td><td>Zoom参加</td></tr>
+      <tr><td><strong>中間コンペ</strong></td><td><strong>6/25（木）10:00〜</strong></td><td><strong>中間プレゼン（対面）→ 5〜6チームに絞る</strong></td><td>審査員・関口・橋本</td><td>対面参加</td></tr>
+      <tr><td><strong>最終コンペ</strong></td><td><strong>7/24（金）時間未定</strong></td><td><strong>対面最終プレゼン（本番）</strong></td><td>学生・審査員</td><td>対面参加</td></tr>
+    </table>
+
+    <div class="tip-box">💡 6/16〜17はジケイレストランにて14:00〜16:00（授業時間外）。学生への事前周知が必要。中間プレゼン（6/25）で約半数に絞り込まれ、残チームが7/24最終コンペへ進む。</div>
+
+    <h3>学生の3段階設計</h3>
+    <div class="fill-box">段階1【知る】 ソフトクリーム × 映えの世界を理解する（5/9〜5/14）
+     ↓
+段階2【作る】 現場を知り、試作する（5/23〜6月）
+     ↓
+段階3【伝える】 コンペで審査員を動かすプレゼンに仕上げる（6/19〜7月）</div>
+
+    <h3>授業設計の基本原則</h3>
+    <ul>
+      <li><strong>15分ルール：</strong>1コンテンツは最大15分。超えるならワークを挟む</li>
+      <li><strong>体を動かす：</strong>実物を見る・書く・話すを毎コマ必ず入れる</li>
+      <li><strong>失敗できる場：</strong>「正解を出す授業」でなく「試す授業」のマインドセット</li>
+      <li><strong>宿題は必ず活用：</strong>次の授業の冒頭で宿題の内容を使ったワークを設計する</li>
+      <li><strong>PR視点を常に添える：</strong>「これをどう伝えるか」を毎回意識させる</li>
+    </ul>
+
+    <h3>PRスケジュール・重要制約</h3>
+    <div class="warn-box">⚠️ <strong>PR TIMES契約：〜2026年6月18日。</strong>ソフトクリームPJのリリースは商品確定後（7月以降）のため、配信方法は時期が近づいた段階で宮崎さんと再確認。</div>
+    <p>プレスリリースはぬいぐるみPJ・ソフトクリームPJで<strong>2本配信予定</strong>。その他のメディアコンタクト・SNSは別途相談。</p>
+
+    <h3>PRストーリー設計</h3>
+    <div class="fill-box">【入口】専門学校生が本物の動物園カフェからオーダーを受けた
+  ↓
+【過程】視察・試作・失敗・改善を繰り返した
+  ↓
+【出口】市場に出る商品として完成した（発売日・動物園で買える）</div>
+
+  </div>
+</section>
+
+<!-- =============================================== -->
+<!-- PHASE 1 -->
+<!-- =============================================== -->
+<div class="phase-banner">🎯 フェーズ1：第1回 5月9日（土）</div>
+
+<!-- 01 授業スクリプト -->
+<section class="doc-section" id="s01">
+  <div class="doc-header">
+    <div class="doc-num">01</div>
+    <div class="doc-title-block">
+      <h2>授業スクリプト完全版</h2>
+      <div class="subtitle">5月9日（土）3限（10:50〜12:20）｜担当：関口先生</div>
+    </div>
+    <span class="doc-badge badge-script">授業スクリプト</span>
+  </div>
+  <div class="doc-body">
+    <div class="note-box">📌 関口先生が話す言葉は「▶ 関口：」、ワーク進行は「🎯 ワーク：」、スライド切り替えは「【スライド】」で表記。</div>
+
+    <div class="time-block">▶ [00:00〜10:00] オープニング（10分）</div>
+    <p><span class="script-speaker sp-slide">【スライド】</span>「ソフトクリーム映えPJ キックオフ / なぜこのソフトクリームに人は並ぶのか？」</p>
+    <div class="script-block">
+      <span class="script-speaker sp-sekiguchi">▶ 関口：</span><br>
+      「みなさん、おはようございます。関口です。今日は特別な授業です。外から本物のゲストを迎えて、本物の仕事に挑む。そういうスタートの日です。<br><br>
+      まず、今日来てくださっている方を紹介します。福岡市動物公園のカフェ・ラッサンブラーを運営されている宮崎さんです。みなさん、拍手で迎えましょう。」
+    </div>
+    <p>→ 宮崎さんによる自己紹介（5〜7分）：動物園カフェの概要・プロジェクトへの期待を話してもらう</p>
+    <div class="script-block">
+      <span class="script-speaker sp-sekiguchi">▶ 関口（宮崎さんの話を受けて）：</span><br>
+      「今日のゴールはシンプルです。①プロジェクトの全体像をつかむ。②『映え』の法則を理解する。③チームで最初のアイデアを出す。この3つです。では始めましょう。」
+    </div>
+
+    <div class="time-block">▶ [10:00〜25:00] 「映え」分析ワーク（15分）</div>
+    <p><span class="script-speaker sp-slide">【スライド】</span>SNSで人気のソフトクリーム5選（各30〜60秒）</p>
+    <ol style="margin: 8px 0 8px 20px;">
+      <li>黒ゴマ×金箔の高級感ソフトクリーム</li>
+      <li>動物の形をしたチョコでデコレーション</li>
+      <li>空とのコントラストが映えるシンプルな白</li>
+      <li>地域名産素材（紫芋・抹茶等）を使ったローカル感</li>
+      <li>動物園の動物と一緒に撮れる「映えスポット」</li>
+    </ol>
+    <div class="script-block">
+      <span class="script-speaker sp-sekiguchi">▶ 関口：</span>「なぜこのソフトクリームを人は撮りたくなるのか？スクリーンを見ながら自分のノートに書いてください。5枚で合計5分。」
+    </div>
+    <div class="script-block">
+      <span class="script-speaker sp-work">🎯 ワーク：</span>隣の人と30秒シェア → 数名を指名して回答を拾う → 黒板にキーワードを書く<br>
+      <em>予想キーワード：「インスタ映え」「珍しい」「きれい」「かわいい」「高そう」「地元感」</em>
+    </div>
+
+    <div class="time-block">▶ [25:00〜40:00] ミニ講義：「映え」の構造（15分）</div>
+    <p><span class="script-speaker sp-slide">【スライド】</span>「映えを分解すると4つの要素がある」</p>
+    <table>
+      <tr><th>要素</th><th>説明</th><th>例</th></tr>
+      <tr><td>🎨 色</td><td>人は0.3秒で色に反応する。珍しい色・鮮やかな色は必ず目を引く</td><td>黒ゴマ・紫芋・抹茶</td></tr>
+      <tr><td>📐 形</td><td>ぐるぐる・高さ・左右対称・黄金比に美しさを感じると写真にしたくなる</td><td>高さのあるぐるぐる</td></tr>
+      <tr><td>📖 ストーリー</td><td>背景にある意味・テーマがあると説明したくて投稿する→拡散</td><td>高級感・動物×かわいさ</td></tr>
+      <tr><td>🌍 文脈</td><td>どこで・誰と食べるか。場所・状況が商品の価値を変える</td><td>動物を背景に食べる写真</td></tr>
+    </table>
+    <div class="tip-box">💡 <strong>隠れた5つ目：価格。</strong>1000円のソフトクリームは「奮発感」で投稿、500円なら「コスパ最高」で投稿。価格も映え演出の一部。</div>
+
+    <div class="time-block">▶ [40:00〜55:00] チーム分け＋ターゲット設定（15分）</div>
+    <div class="script-block">
+      <span class="script-speaker sp-sekiguchi">▶ 関口：</span>「席についたら、まずチームで1つだけ決めてください。『誰に食べてほしいか？』5分以内に決めてください。」
+    </div>
+    <div class="fill-box">（例）子ども連れのお母さん
+（例）初デートのカップル
+（例）動物好きな高校生・大学生グループ
+（例）遠足で来た中学生たち</div>
+    <p>→ 各チームが1文で発表（30秒×チーム数）。関口は板書でメモ。</p>
+
+    <div class="time-block">▶ [55:00〜75:00] アイデア発散ブレスト（20分）</div>
+    <p><span class="script-speaker sp-slide">【スライド】</span>ブレスト切り口一覧</p>
+    <table>
+      <tr><th>切り口</th><th>問いかけ</th></tr>
+      <tr><td>① 色</td><td>何色のソフトクリームにする？普通じゃない色は？</td></tr>
+      <tr><td>② 形</td><td>どんな形にする？高さ・ぐるぐる以外は？</td></tr>
+      <tr><td>③ トッピング</td><td>何をのせる？動物と絡めるなら？</td></tr>
+      <tr><td>④ コンセプト</td><td>「○○なソフトクリーム」と一言で言うと？</td></tr>
+      <tr><td>⑤ ストーリー</td><td>食べる場面はどんなシーン？</td></tr>
+      <tr><td>⑥ 価格感</td><td>いくらに見える？いくらなら絶対買う？</td></tr>
+    </table>
+    <div class="script-block">
+      <span class="script-speaker sp-work">🎯 ワーク：</span>ルール1つ「ダメ出し禁止」。付箋1枚に1アイデア。チームで合計20枚以上を目標に20分。<br>
+      <em>声かけ例：「動物と絡められる？」「食べると何かが変わるとしたら？（色が変わる、音が出る等）」</em>
+    </div>
+
+    <div class="time-block">▶ [75:00〜87:00] 各チーム1分発表（12分）</div>
+    <p>発表内容：①ターゲット ②気に入ったアイデア1つ ③なんとなくの方向性。完成でなくてよい。「今日の宣言」のみ。</p>
+
+    <div class="time-block">▶ [87:00〜90:00] 宿題説明・クロージング（3分）</div>
+    <table>
+      <tr><th>宿題</th><th>内容</th></tr>
+      <tr><td>①個人</td><td>自分チームのソフトクリームがInstagramに投稿されている場面を1枚スケッチ</td></tr>
+      <tr><td>②チーム</td><td>SNSで「映えるソフトクリーム」3事例を調べてLINEで共有。なぜ映えるか一言メモ</td></tr>
+    </table>
+
+    <h3>スライドデッキ構成案（10枚）</h3>
+    <ol>
+      <li>タイトルスライド</li><li>宮崎さん・カフェ・ラッサンブラー紹介</li><li>今日のゴール3つ</li>
+      <li>SNS人気ソフトクリーム5枚（各1スライド）</li><li>映えの4要素（＋価格）</li>
+      <li>チーム発表・ターゲット決め</li><li>ブレストの切り口一覧</li>
+      <li>発表ルール</li><li>宿題スライド</li>
+    </ol>
+
+    <h3>撮影・記録のお願い（プレスリリース用）</h3>
+    <ul>
+      <li>学生がブレストで付箋を書いている様子</li>
+      <li>宮崎さんが話している場面</li>
+      <li>チームで話し合っている様子（複数チーム）</li>
+      <li>発表している学生の表情</li>
+    </ul>
+  </div>
+</section>
+
+<!-- 02 発散ワークシート -->
+<section class="doc-section" id="s02">
+  <div class="doc-header">
+    <div class="doc-num">02</div>
+    <div class="doc-title-block">
+      <h2>「映え」発散シート</h2>
+      <div class="subtitle">5月9日配布｜学生配布用ワークシート</div>
+    </div>
+    <span class="doc-badge badge-ws">学生ワークシート</span>
+  </div>
+  <div class="doc-body">
+    <p><strong>チーム名：</strong>＿＿＿＿＿＿＿＿＿＿　　<strong>氏名：</strong>＿＿＿＿＿＿＿＿＿＿</p>
+    <hr>
+
+    <h3>STEP 1：「映え」分析（個人・5分）</h3>
+    <p>SNSで人気のソフトクリームを5枚見ました。それぞれ「なぜ撮りたくなるか」を一言で書いてください。</p>
+    <table>
+      <tr><th>#</th><th>ソフトクリームの特徴</th><th>なぜ撮りたくなるか（一言）</th></tr>
+      <tr><td>①</td><td>黒ゴマ×金箔</td><td></td></tr>
+      <tr><td>②</td><td>動物チョコでデコ</td><td></td></tr>
+      <tr><td>③</td><td>青空×白いソフトクリーム</td><td></td></tr>
+      <tr><td>④</td><td>地域素材（紫芋・抹茶等）</td><td></td></tr>
+      <tr><td>⑤</td><td>動物園での映えスポット</td><td></td></tr>
+    </table>
+
+    <h3>STEP 2：映えの4要素チェック（個人・3分）</h3>
+    <table>
+      <tr><th>要素</th><th>意味</th><th>自分が気になったソフトに当てはまる？</th></tr>
+      <tr><td>🎨 色</td><td>珍しい色・鮮やかな色・コントラスト</td><td></td></tr>
+      <tr><td>📐 形</td><td>高さ・バランス・左右対称・珍しい形状</td><td></td></tr>
+      <tr><td>📖 ストーリー</td><td>背景にある意味・テーマ</td><td></td></tr>
+      <tr><td>🌍 文脈</td><td>どこで・誰と・どんな場面で食べるか</td><td></td></tr>
+    </table>
+
+    <h3>STEP 3：ターゲット決め（チーム・5分）</h3>
+    <p><strong>私たちの答え →</strong> ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿</p>
+    <p>そのターゲットを選んだ理由（一言）：＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿</p>
+
+    <h3>STEP 4：ブレスト発散（チーム・20分）</h3>
+    <h4>① 色 ─ どんな色のソフトクリームにする？</h4>
+    <div class="fill-box">アイデア1：
+アイデア2：
+アイデア3：
+その他：</div>
+    <h4>② 形 ─ どんな形にする？</h4>
+    <div class="fill-box">アイデア1：
+アイデア2：
+アイデア3：
+その他：</div>
+    <h4>③ トッピング ─ 何をのせる？</h4>
+    <div class="fill-box">アイデア1：
+アイデア2：
+アイデア3：
+その他：</div>
+    <h4>④ コンセプト ─ 「○○なソフトクリーム」を一言で言うと？</h4>
+    <div class="fill-box">アイデア1：
+アイデア2：
+アイデア3：</div>
+    <h4>⑤ ストーリー ─ どんな場面で食べてほしい？</h4>
+    <div class="fill-box">アイデア1：
+アイデア2：</div>
+    <h4>⑥ 価格感</h4>
+    <div class="fill-box">「いくらに見える？」→　　　円
+「いくらなら絶対買う？」→　　　円</div>
+
+    <h3>STEP 5：今日の方向性を決める（チーム・5分）</h3>
+    <div class="fill-box">ターゲット：
+コンセプト（一言）：
+色のイメージ：
+形・トッピングのイメージ：
+価格帯のイメージ：</div>
+
+    <h3>今日の宿題</h3>
+    <table>
+      <tr><th>宿題①（個人）</th><td>自チームのソフトクリームがInstagramに投稿されている場面を1枚スケッチで描く。うまく描かなくてよい。次回（第5〜6回頃）持参。</td></tr>
+      <tr><th>宿題②（チーム）</th><td>SNSで「映えるソフトクリーム」の写真を3つ見つける。なぜ映えているか一言メモしてLINEでシェア。</td></tr>
+    </table>
+  </div>
+</section>
+
+<!-- 03 宿題チェックシート（内部） -->
+<section class="doc-section" id="s03">
+  <div class="doc-header">
+    <div class="doc-num">03</div>
+    <div class="doc-title-block">
+      <h2>宿題チェックシート</h2>
+      <div class="subtitle">教員・橋本用 ／ 学生には配布しない</div>
+    </div>
+    <span class="doc-badge badge-internal">内部管理資料</span>
+  </div>
+  <div class="doc-body">
+    <div class="internal-banner">📌 このシートは教員・橋本が授業外で使用する管理資料です。学生には配布しません。</div>
+
+    <h3>第1回（5/9）課題チェック ─ 確認タイミング：第5〜6回頃</h3>
+    <table>
+      <tr><th>#</th><th>チーム名</th><th>宿題①スケッチ（個人）</th><th>宿題②事例3選（チーム）</th><th>備考</th></tr>
+      <tr><td>1</td><td></td><td>○人／○人</td><td>○ / △ / ×</td><td></td></tr>
+      <tr><td>2</td><td></td><td>○人／○人</td><td>○ / △ / ×</td><td></td></tr>
+      <tr><td>3</td><td></td><td>○人／○人</td><td>○ / △ / ×</td><td></td></tr>
+      <tr><td>4</td><td></td><td>○人／○人</td><td>○ / △ / ×</td><td></td></tr>
+      <tr><td>5</td><td></td><td>○人／○人</td><td>○ / △ / ×</td><td></td></tr>
+      <tr><td>6</td><td></td><td>○人／○人</td><td>○ / △ / ×</td><td></td></tr>
+      <tr><td>7</td><td></td><td>○人／○人</td><td>○ / △ / ×</td><td></td></tr>
+      <tr><td>8</td><td></td><td>○人／○人</td><td>○ / △ / ×</td><td></td></tr>
+    </table>
+
+    <h3>チーム名・ターゲット一覧（第1回後に記入）</h3>
+    <table>
+      <tr><th>チーム#</th><th>チーム名</th><th>ターゲット</th><th>コンセプト仮案</th><th>担当学生名（任意）</th></tr>
+      <tr><td>1</td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>2</td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>3</td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>4</td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>5</td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>6</td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>7</td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>8</td><td></td><td></td><td></td><td></td></tr>
+    </table>
+
+    <h3>写真・撮影記録チェックリスト（プレスリリース用）</h3>
+    <table>
+      <tr><th>授業回</th><th>撮影者</th><th>撮れた写真</th><th>Gドライブ保存</th></tr>
+      <tr><td>第1回 5/9</td><td>関口先生 or 赤岩先生</td><td>ブレスト付箋・チーム発表・宮崎さん挨拶</td><td>○ / ×</td></tr>
+      <tr><td>第2回 5/14</td><td>上園先生（調整）</td><td>原価計算ワーク・学生の様子</td><td>○ / ×</td></tr>
+      <tr><td>第3回 5/23</td><td><strong>赤岩先生</strong>（後日橋本に共有）</td><td>動物園視察・カフェ外観・マーケティング調査・宮崎さんとの対話</td><td>○ / ×</td></tr>
+      <tr><td>第5回 試作</td><td>橋本 or 関口</td><td>試作・撮影・完成品ショット</td><td>○ / ×</td></tr>
+      <tr><td>中間コンペ 6/25</td><td>橋本</td><td>発表・審査・動物園スタッフとの写真</td><td>○ / ×</td></tr>
+      <tr><td>最終コンペ 7/24</td><td>橋本</td><td>最終発表・結果発表・全員写真</td><td>○ / ×</td></tr>
+    </table>
+  </div>
+</section>
+
+<!-- =============================================== -->
+<!-- PHASE 2 -->
+<!-- =============================================== -->
+<div class="phase-banner">💴 フェーズ2：第2回 5月14日（木）─ 原価・食品基礎</div>
+
+<!-- 04 原価計算ワークシート -->
+<section class="doc-section" id="s04">
+  <div class="doc-header">
+    <div class="doc-num">04</div>
+    <div class="doc-title-block">
+      <h2>原価計算シート</h2>
+      <div class="subtitle">5月14日配布｜担当：上園先生</div>
+    </div>
+    <span class="doc-badge badge-ws">学生ワークシート</span>
+  </div>
+  <div class="doc-body">
+    <p><strong>チーム名：</strong>＿＿＿＿＿＿＿＿＿＿　　<strong>氏名：</strong>＿＿＿＿＿＿＿＿＿＿</p>
+    <div class="tip-box">🎯 <strong>今日のゴール：</strong>自分たちのソフトクリームがいくらになるか、「理由をもって答えられる」こと。感覚ではなく数字で説明できる状態を目指す。</div>
+    <hr>
+
+    <h3>STEP 1：原価って何だっけ？（個人・5分）</h3>
+    <p>ソフトクリームを1本作るとき、どんなコストがかかる？思いつくものをすべて書いてみよう。</p>
+    <div class="fill-box">自分が思いついたもの：
+1.
+2.
+3.
+4.
+5.</div>
+
+    <h3>STEP 2：原価率の計算式を覚えよう（全体・5分）</h3>
+    <div class="formula-box">原価率（%） ＝ 原価 ÷ 売価 × 100</div>
+    <p><strong>練習問題①：</strong>材料費200円のソフトクリームを700円で売った場合の原価率は？</p>
+    <div class="fill-box">計算式：200 ÷ 700 × 100 ＝　　　　　　％</div>
+    <p><strong>練習問題②：</strong>原価率30%を目標にした場合、材料費240円のソフトクリームの売価は？</p>
+    <div class="fill-box">計算式：240 ÷ 0.30 ＝　　　　円　→　実際には　　　　円で売る（10円単位）</div>
+    <div class="tip-box">💡 飲食業の目安：原価率は25〜35%が一般的。観光施設は立地の付加価値があるため40%でも成立する場合がある。</div>
+
+    <h3>STEP 3：チームのソフトクリームの原価を計算する（チーム・20分）</h3>
+    <h4>① 材料リスト</h4>
+    <table>
+      <tr><th>材料名</th><th>用途</th><th>1本あたりの使用量</th><th>単価（予測）</th><th>1本あたりのコスト</th></tr>
+      <tr><td>ソフトクリームミックス</td><td>本体</td><td></td><td></td><td></td></tr>
+      <tr><td>コーン or カップ</td><td>容器</td><td>1個</td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td><strong>合計</strong></td><td></td><td></td><td></td><td><strong>　　　　円</strong></td></tr>
+    </table>
+
+    <h4>② 包材・消耗品コスト</h4>
+    <table>
+      <tr><th>消耗品</th><th>1本あたりのコスト（予測）</th></tr>
+      <tr><td>容器・包み紙</td><td></td></tr>
+      <tr><td>スプーン・ナプキン</td><td></td></tr>
+      <tr><td>その他（シール等）</td><td></td></tr>
+      <tr><td><strong>小計</strong></td><td><strong>　　　　円</strong></td></tr>
+    </table>
+
+    <h4>③ 売価の設定</h4>
+    <div class="fill-box">材料費合計　　　：　　　　円
+消耗品合計　　　：　　　　円
+────────────────
+原価合計（1本）：　　　　円
+
+目標原価率　　　：　　　　％（30〜40%推奨）
+計算式　　　　　：原価合計 ÷ 目標原価率 ＝　　　　円
+設定売価（案）　：　　　　円（端数を切り上げ）
+実際の原価率　　：　　　　％</div>
+
+    <h3>STEP 4：売価の「見え方」を考える</h3>
+    <table>
+      <tr><th>確認項目</th><th>チェック</th></tr>
+      <tr><td>ターゲットがためらわずに払える金額か</td><td>○ / △ / ×</td></tr>
+      <tr><td>「この見た目でこの値段はコスパいい」と思ってもらえるか</td><td>○ / △ / ×</td></tr>
+      <tr><td>動物園の他の食べ物と比べて違和感がないか</td><td>○ / △ / ×</td></tr>
+      <tr><td>SNSに投稿するとき「値段も紹介したい」と思える価格か</td><td>○ / △ / ×</td></tr>
+    </table>
+
+    <h3>今日の宿題</h3>
+    <table>
+      <tr><th>宿題①（チーム）</th><td>「？」にした材料の正確な単価を調べてくる（業務スーパー等で検索）</td></tr>
+      <tr><th>宿題②（個人）</th><td>動物園・テーマパーク・観光地のカフェで売られているソフトクリームの値段を1つ調べてくる</td></tr>
+    </table>
+  </div>
+</section>
+
+<!-- 04b PRワークシート（5/14宿題用） -->
+<section class="doc-section" id="s04b">
+  <div class="doc-header">
+    <div class="doc-num" style="background:#e67e22;">04b</div>
+    <div class="doc-title-block">
+      <h2>PRワークシート（5/14配布・宿題用）</h2>
+      <div class="subtitle">5/14授業終了時に上園先生から配布｜5/23視察前にチームで共有すること</div>
+    </div>
+    <span class="doc-badge badge-work">学生配布ワーク</span>
+  </div>
+  <div class="doc-body">
+    <p><strong>チーム名：</strong>＿＿＿＿＿＿＿＿＿＿　　<strong>氏名：</strong>＿＿＿＿＿＿＿＿＿＿</p>
+    <div class="tip-box">🎯 今日の授業で「食品の現実」を学びました。このシートは「それをどうお客さんに伝えるか」を考えるワークです。5/23の視察前にチームで必ず共有してください。</div>
+
+    <h3>Part A：価格を決めて、伝える言葉を作る（個人課題）</h3>
+    <table>
+      <tr><th>項目</th><th>金額</th></tr>
+      <tr><td>想定する材料費（1本あたり）</td><td>　　　　円</td></tr>
+      <tr><td>目標とする価格（販売価格）</td><td>　　　　円</td></tr>
+      <tr><td>計算した原価率</td><td>　　　　％</td></tr>
+    </table>
+    <p><strong>その価格にした理由（1〜2文）：</strong></p>
+    <div class="fill-box"> </div>
+    <p><strong>この価格を正当化するキャッチフレーズ（案）：</strong></p>
+    <div class="fill-box">（例）「動物園で食べる、ここだけの一本」「○○の素材を使った、動物と写れるソフトクリーム」
+
+自チームのアイデア：</div>
+
+    <h3>Part B：「映え × 安全」を写真で伝える発想（チーム課題）</h3>
+    <p><strong>「動物園カフェで食べているお客さん」の場面を1枚撮る or スケッチする</strong></p>
+    <div class="tip-box">📷 実際のカフェでなくてよい（近くの公園・学校のカフェテリア等でOK）。イメージが伝わればOK。</div>
+    <div class="fill-box">撮った写真の説明 or スケッチのポイント：
+
+（なぜこの場所・この角度を選んだか）</div>
+    <p><strong>「安全・安心」を伝えるための一言（パッケージや看板に添えるなら）：</strong></p>
+    <div class="fill-box">（例）「アレルゲン情報はこちら」「動物園オリジナル・地元素材使用」
+
+自チームのアイデア：</div>
+
+    <h3>Part C：気になる食品パッケージの観察（個人課題）</h3>
+    <p>コンビニ・カフェ・スーパーで「気になった食品のパッケージや看板」の写真を1枚撮ってきてください。</p>
+    <table>
+      <tr><th>項目</th><th>記入欄</th></tr>
+      <tr><td>商品名・ブランド</td><td></td></tr>
+      <tr><td>どこで見たか</td><td></td></tr>
+      <tr><td>何が気になったか（一言）</td><td></td></tr>
+      <tr><td>自分たちのソフトクリームに活かせそうなこと</td><td></td></tr>
+    </table>
+
+    <h3>5/23視察前の確認チェック</h3>
+    <ul>
+      <li>☐ A（価格と言葉）を書いた</li>
+      <li>☐ B（写真 or スケッチ）を用意した</li>
+      <li>☐ C（観察レポート）を書いた</li>
+      <li>☐ チームメンバーにLINEで視察前に共有した</li>
+    </ul>
+  </div>
+</section>
+
+<!-- =============================================== -->
+<!-- PHASE 3 -->
+<!-- =============================================== -->
+<div class="phase-banner">🔍 フェーズ3：第3回 5月23日（土）─ 現地マーケティング視察</div>
+
+<!-- 09 視察シート（学生用） -->
+<section class="doc-section" id="s09">
+  <div class="doc-header">
+    <div class="doc-num">09</div>
+    <div class="doc-title-block">
+      <h2>現地マーケティング調査シート</h2>
+      <div class="subtitle">5月23日 ／ 福岡市立動物園レストラン調査｜学生配布用</div>
+    </div>
+    <span class="doc-badge badge-check">調査シート</span>
+  </div>
+  <div class="doc-body">
+    <p><strong>チーム名：</strong>＿＿＿＿＿＿＿＿＿＿　　<strong>調査担当：</strong>＿＿＿＿＿＿＿＿＿＿</p>
+    <p><strong>調査日：</strong>2026年5月23日（土）　<strong>調査時間：</strong>　　時　分〜　　時　分</p>
+    <div class="tip-box">🎯 今日のミッション：「売れているものを作る」ためのマーケティング調査。今日見てきたことがターゲット・価格・コンセプト設定の根拠になります。</div>
+    <hr>
+
+    <h3>A. 客層・来店パターンの調査</h3>
+    <h4>A-1. 時間帯別の客層カウント（10分ごとに記録）</h4>
+    <table>
+      <tr><th>時刻</th><th>総人数</th><th>子ども連れ家族</th><th>カップル・友人G</th><th>一人</th><th>団体</th><th>メモ</th></tr>
+      <tr><td>　　:00</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>　　:10</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>　　:20</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>　　:30</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>　　:40</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>　　:50</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+    </table>
+    <h4>A-2. 客層の詳細</h4>
+    <div class="fill-box">一番多かった客層（具体的に）：
+
+二番目に多かった客層：
+
+意外に多かった・少なかった客層（あれば）：</div>
+
+    <h3>B. メニュー・需要の調査</h3>
+    <h4>B-1. メニュー全体の記録（ソフトクリーム・スイーツ系は特に詳しく）</h4>
+    <table>
+      <tr><th>カテゴリ</th><th>商品名</th><th>価格</th><th>見た目・特徴メモ</th></tr>
+      <tr><td>ソフトクリーム・アイス</td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td>軽食・フード</td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td>ドリンク</td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+    </table>
+    <h4>B-2. よく出ていた商品（注文カウント）</h4>
+    <div class="fill-box">① 商品名：　　　　　　　　　　　何回見たか：
+② 商品名：　　　　　　　　　　　何回見たか：
+③ 商品名：　　　　　　　　　　　何回見たか：
+④ 商品名：　　　　　　　　　　　何回見たか：</div>
+    <h4>B-3. 現在のソフトクリームの詳細観察</h4>
+    <table>
+      <tr><th>項目</th><th>観察内容</th></tr>
+      <tr><td>フレーバー・種類</td><td></td></tr>
+      <tr><td>価格</td><td></td></tr>
+      <tr><td>大きさ・見た目</td><td></td></tr>
+      <tr><td>提供容器</td><td></td></tr>
+      <tr><td>注文〜受け取りまでの時間</td><td></td></tr>
+      <tr><td>受け取った客の反応（写真を撮るか等）</td><td></td></tr>
+      <tr><td>「映える」と感じるか</td><td>感じる / どちらでもない / 感じない</td></tr>
+      <tr><td>自分が買いたいと思うか / 理由</td><td></td></tr>
+    </table>
+
+    <h3>C. 価格感・購買行動の調査</h3>
+    <h4>C-1. 価格帯の分布</h4>
+    <table>
+      <tr><th>価格帯</th><th>該当商品数</th><th>代表的な商品</th></tr>
+      <tr><td>〜500円</td><td></td><td></td></tr>
+      <tr><td>501〜800円</td><td></td><td></td></tr>
+      <tr><td>801〜1,000円</td><td></td><td></td></tr>
+      <tr><td>1,001円〜</td><td></td><td></td></tr>
+    </table>
+    <h4>C-2. 購買行動の観察</h4>
+    <table>
+      <tr><th>観察項目</th><th>内容</th></tr>
+      <tr><td>メニューを見る時間</td><td></td></tr>
+      <tr><td>子どもが「これがいい」と言っている場面</td><td></td></tr>
+      <tr><td>大人が価格を見て迷っている場面</td><td></td></tr>
+      <tr><td>追加注文・衝動買いしているお客さん</td><td></td></tr>
+    </table>
+    <div class="fill-box">「この価格なら迷わず買う」と感じさせる価格帯（観察から判断）：
+　　　　円くらいまでなら即決している印象。
+　　　　円を超えると少し迷う様子が見られた。</div>
+
+    <h3>D. 撮影・SNS行動の調査</h3>
+    <table>
+      <tr><th>観察した場面</th><th>何を撮っていたか</th><th>誰が撮っていたか</th></tr>
+      <tr><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td></tr>
+    </table>
+
+    <h3>E. 環境・オペレーションの観察</h3>
+    <table>
+      <tr><th>観察項目</th><th>内容</th></tr>
+      <tr><td>席数（目測）</td><td></td></tr>
+      <tr><td>混雑のピーク時間帯</td><td></td></tr>
+      <tr><td>スタッフ人数（目測）</td><td></td></tr>
+      <tr><td>注文から提供までの平均時間（目測）</td><td></td></tr>
+      <tr><td>天候による影響</td><td></td></tr>
+    </table>
+
+    <h3>F. 視察のまとめ（チームで話し合い）</h3>
+    <div class="fill-box">視察前のターゲット仮説：
+
+視察後の結論：
+
+変えた（変えなかった）理由：
+
+───────────────────────────────
+この動物園レストランの主力価格帯：　　　円〜　　　円
+自分たちのソフトクリームの設定価格（修正後）：　　　円
+その根拠：
+
+───────────────────────────────
+コンセプトに加えたいこと：
+
+コンセプトから外したいこと（現実的でなかったこと）：
+
+中間プレゼン（6/25）で「今日の視察データ」をどう使うか：</div>
+  </div>
+</section>
+
+<!-- 06 視察チェックシート（教員用） -->
+<section class="doc-section" id="s06">
+  <div class="doc-header">
+    <div class="doc-num">06</div>
+    <div class="doc-title-block">
+      <h2>視察チェックシート（教員用）</h2>
+      <div class="subtitle">5月23日 当日運営管理用｜赤岩先生担当（関口・橋本不参加）｜学生には配布しない</div>
+    </div>
+    <span class="doc-badge badge-internal">内部管理資料</span>
+  </div>
+  <div class="doc-body">
+    <div class="internal-banner">📌 このシートは<strong>赤岩先生</strong>が当日の現地引率管理に使用します。関口・橋本は不参加です。学生には配布しません。</div>
+
+    <h3>事前準備チェック（5/20までに完了）</h3>
+    <ul>
+      <li>☐ 宮崎さんへ当日の集合場所・受付担当者を確認済み（または橋本経由で確認依頼済み）</li>
+      <li>☐ 学生への事前周知（集合時間・持ち物・服装・注意事項）完了</li>
+      <li>☐ 撮影指導シート（05_）を学生に配布済み or 当日配布分を印刷済み</li>
+      <li>☐ 学生用マーケティング調査シート（09_）を印刷済み（チーム数×人数分）</li>
+      <li>☐ カフェ・ラッサンブラーの営業時間・混雑状況を確認済み</li>
+    </ul>
+
+    <h3>当日タイムライン（目安）</h3>
+    <table>
+      <tr><th>時刻</th><th>内容</th><th>担当</th><th>☐</th></tr>
+      <tr><td>集合</td><td>動物公園入口集合・点呼</td><td><strong>赤岩先生</strong></td><td>☐</td></tr>
+      <tr><td>+10分</td><td>宮崎さんと合流・挨拶</td><td><strong>赤岩先生</strong></td><td>☐</td></tr>
+      <tr><td>+15分</td><td>カフェ・ラッサンブラー見学（宮崎さん or スタッフによる施設説明）</td><td>宮崎さん</td><td>☐</td></tr>
+      <tr><td>+30分</td><td>チームごとにマーケティング調査開始（調査シート記入・撮影ミッション）</td><td>全員</td><td>☐</td></tr>
+      <tr><td>+60分</td><td>全チーム集合・チーム内振り返り（10分）</td><td><strong>赤岩先生</strong></td><td>☐</td></tr>
+      <tr><td>+70分</td><td>各チーム1分発表（視察で気づいたこと）</td><td><strong>赤岩先生</strong>進行</td><td>☐</td></tr>
+      <tr><td>+80分</td><td>宮崎さんへ質問タイム（チームから質問を集約）</td><td><strong>赤岩先生</strong>ファシリ</td><td>☐</td></tr>
+      <tr><td>+85分</td><td>PR用写真・集合写真の撮影（後日橋本に共有）</td><td><strong>赤岩先生</strong></td><td>☐</td></tr>
+      <tr><td>+90分</td><td>解散・次回予告（6/13の内容を一言告知）</td><td><strong>赤岩先生</strong></td><td>☐</td></tr>
+    </table>
+
+    <h3>宮崎さんへの質問事項（事前に準備）</h3>
+    <table>
+      <tr><th>質問</th><th>回答メモ</th></tr>
+      <tr><td>カフェのソフトクリームの現状（フレーバー・価格帯）</td><td></td></tr>
+      <tr><td>お客さんで一番多い層（実感として）</td><td></td></tr>
+      <tr><td>一番写真を撮られているメニューはどれか</td><td></td></tr>
+      <tr><td>コンペ当日（6/25）のタイムスケジュール・段取りの確認</td><td></td></tr>
+      <tr><td>評価軸（何を重視するか）</td><td></td></tr>
+      <tr><td>プレスリリース写真の使用許可・動物公園の広報ルール</td><td></td></tr>
+    </table>
+
+    <h3>視察後のタスク（担当別）</h3>
+    <table>
+      <tr><th>タスク</th><th>担当</th><th>期限</th></tr>
+      <tr><td>写真を橋本にLINE or メールで共有</td><td><strong>赤岩先生</strong></td><td>当日中</td></tr>
+      <tr><td>宮崎さんへのお礼連絡</td><td>橋本</td><td>翌日以内</td></tr>
+      <tr><td>チームの視察レポート提出を確認・督促</td><td><strong>赤岩先生</strong></td><td>5/25まで</td></tr>
+      <tr><td>視察で確認した情報（宮崎さんの回答等）を橋本に共有</td><td><strong>赤岩先生</strong></td><td>5/26まで</td></tr>
+    </table>
+  </div>
+</section>
+
+<!-- =============================================== -->
+<!-- PHASE 4 -->
+<!-- =============================================== -->
+<div class="phase-banner">📸 フェーズ4：第5回 6月16〜17日 ─ 試作・オペレーション確認</div>
+
+<!-- 05 撮影指導アドバイスシート -->
+<section class="doc-section" id="s05">
+  <div class="doc-header">
+    <div class="doc-num">05</div>
+    <div class="doc-title-block">
+      <h2>撮影指導アドバイスシート</h2>
+      <div class="subtitle">試作当日（6/16 or 6/17）に配布｜5/23視察でも参考にしてよい</div>
+    </div>
+    <span class="doc-badge badge-check">アドバイスシート</span>
+  </div>
+  <div class="doc-body">
+    <p><strong>チーム名：</strong>＿＿＿＿＿＿＿＿＿＿　　<strong>氏名：</strong>＿＿＿＿＿＿＿＿＿＿</p>
+    <div class="tip-box">🎯 試作＝PR写真を撮るチャンスです。スマホ1台で、プレスリリースに使えるレベルの写真を目指しましょう。</div>
+    <hr>
+
+    <h3>映え写真の「3つの基本」</h3>
+    <h4>① 光を味方にする</h4>
+    <table>
+      <tr><th>やること</th><th>ポイント</th></tr>
+      <tr><td>逆光を避ける</td><td>被写体の後ろに強い光があると暗くなる。光を正面か斜め前から当てる</td></tr>
+      <tr><td>曇り空＝チャンス</td><td>直射日光より均一に明るく影が出ない。食べ物撮影に最適</td></tr>
+      <tr><td>室内は窓際で</td><td>カフェ内で撮るなら窓の光を使う。蛍光灯の真下は避ける</td></tr>
+    </table>
+    <h4>② 構図を決める</h4>
+    <table>
+      <tr><th>構図</th><th>説明</th><th>向いているシーン</th></tr>
+      <tr><td>日の丸</td><td>被写体を中央に置く</td><td>ソフトクリームを主役にしたいとき</td></tr>
+      <tr><td>三分割</td><td>画面を縦横3等分し交点に被写体</td><td>背景も見せたいとき</td></tr>
+      <tr><td>俯瞰（真上）</td><td>上から真っすぐ撮る</td><td>トッピングの可愛さを見せたいとき</td></tr>
+      <tr><td>アイレベル</td><td>食べ物と同じ高さから撮る</td><td>高さ・形を見せたいとき</td></tr>
+      <tr><td>斜め45度</td><td>少し斜めから撮る</td><td>立体感が出る。迷ったらこれ</td></tr>
+    </table>
+    <h4>③ 「引き算」で整理する</h4>
+    <div class="tip-box">
+      シャッターを押す前に確認：<br>
+      ☐ テーブルに関係ないものが写り込んでいないか<br>
+      ☐ 自分の影・他の人が映り込んでいないか<br>
+      ☐ 背景がごちゃごちゃしていないか（白い壁・空・緑がベスト）<br>
+      ☐ スマホが傾いていないか（水平を保つ）
+    </div>
+
+    <h3>ソフトクリームをより映えさせるテクニック</h3>
+    <h4>撮影の順番（推奨）</h4>
+    <ol>
+      <li>テーブルに置いて全体を撮る（構図を確認）</li>
+      <li>手に持って空を背景に撮る</li>
+      <li>動物や看板と一緒に撮る（ストーリー系）</li>
+      <li>食べ始めた様子（リアル感系）</li>
+    </ol>
+    <div class="warn-box">⚠️ 溶け始めると写真の印象がガクッと落ちます。受け取ったら<strong>30秒以内</strong>に撮影を済ませる習慣を！</div>
+
+    <h3>試作当日の必須撮影カット（5カット）</h3>
+    <table>
+      <tr><th>#</th><th>カット</th><th>撮れた？</th></tr>
+      <tr><td>①</td><td>完成品の正面ショット（テーブル置き）</td><td>□</td></tr>
+      <tr><td>②</td><td>持った状態のショット（手が入る）</td><td>□</td></tr>
+      <tr><td>③</td><td>真上から見たトッピングのショット</td><td>□</td></tr>
+      <tr><td>④</td><td>製造プロセスのショット（作っている場面）</td><td>□</td></tr>
+      <tr><td>⑤</td><td>チームメンバーが試食している場面</td><td>□</td></tr>
+    </table>
+
+    <h3>映え写真チェックリスト（SNS投稿前に）</h3>
+    <ul>
+      <li>☐ 光の向きがいい（被写体が明るく見える）</li>
+      <li>☐ 背景がシンプル or ストーリーがある</li>
+      <li>☐ 余計なものが写り込んでいない</li>
+      <li>☐ ソフトクリームがきれいな状態（溶けていない）</li>
+      <li>☐ 構図が決まっている（迷ったら斜め45度）</li>
+      <li>☐ 撮影後に明るさを調整した</li>
+    </ul>
+  </div>
+</section>
+
+<!-- 10 オペレーション確認 -->
+<section class="doc-section" id="s10">
+  <div class="doc-header">
+    <div class="doc-num">10</div>
+    <div class="doc-title-block">
+      <h2>オペレーション確認アドバイスシート</h2>
+      <div class="subtitle">6月16〜17日 14:00〜16:00｜ジケイレストランにて試作</div>
+    </div>
+    <span class="doc-badge badge-check">試作・確認シート</span>
+  </div>
+  <div class="doc-body">
+    <p><strong>チーム名：</strong>＿＿＿＿＿＿＿＿＿＿　　<strong>記録担当：</strong>＿＿＿＿＿＿＿＿＿＿</p>
+    <div class="tip-box">🎯 今日のゴール：クライアント要件を満たした上で、「中間プレゼン（6/25）に活かせる発見を持ち帰る」こと。「完璧なものを作ること」が目的ではありません。</div>
+    <hr>
+
+    <h3>0. クライアント要件の確認（最優先・試作前に全員で確認）</h3>
+    <div class="warn-box">⚠️ この要件を外した提案はコンペで落とされます。試作前に必ず全員で確認してください。</div>
+    <h4>提供時間の要件</h4>
+    <table>
+      <tr><th>要件項目</th><th>クライアントの要求</th><th>自チームの目標</th></tr>
+      <tr><td>注文から提供までの目標時間</td><td>　　　　<strong>秒以内</strong></td><td>　　　　秒</td></tr>
+      <tr><td>ピーク時（行列時）でも対応できる時間</td><td>　　　　<strong>秒以内</strong></td><td>　　　　秒</td></tr>
+      <tr><td>トッピング込みの最大許容時間</td><td>　　　　<strong>秒以内</strong></td><td>　　　　秒</td></tr>
+    </table>
+    <div class="tip-box">💡 一般的なカフェのソフトクリームは30〜60秒程度が目標。トッピング・盛り付けが複雑になるほど時間がかかるため、工程設計が鍵になります。</div>
+
+    <h4>商品仕様の要件</h4>
+    <table>
+      <tr><th>要件項目</th><th>クライアントの要求</th><th>自チームの計画</th></tr>
+      <tr><td>販売価格の上限</td><td>　　　　円以内</td><td>　　　　円</td></tr>
+      <tr><td>販売価格の下限</td><td>　　　　円以上</td><td>　　　　円</td></tr>
+      <tr><td>使用できるフレーバー</td><td></td><td></td></tr>
+      <tr><td>禁止食材・アレルゲン対応</td><td></td><td></td></tr>
+      <tr><td>容器（コーン/カップ等）</td><td></td><td></td></tr>
+      <tr><td>テイクアウト対応の有無</td><td>必須 / 不要 / 任意</td><td></td></tr>
+    </table>
+
+    <h4>試作前に確認すること</h4>
+    <ul>
+      <li>☐ 提供時間の要件を実際に計測して確認する</li>
+      <li>☐ 禁止食材が入っていないことを確認する</li>
+      <li>☐ 販売価格内で原価が収まることを確認する</li>
+      <li>☐ 学生が扱える範囲の工程であることを確認する</li>
+    </ul>
+
+    <h3>1. オペレーション確認：製造時間の計測（秒単位）</h3>
+    <h4>試作1回目</h4>
+    <table>
+      <tr><th>フェーズ</th><th>所要時間</th><th>詰まったポイント</th></tr>
+      <tr><td>材料を手元に並べる</td><td>　　秒</td><td></td></tr>
+      <tr><td>コーン/カップを構える</td><td>　　秒</td><td></td></tr>
+      <tr><td>ソフトクリーム本体を絞る</td><td>　　秒</td><td></td></tr>
+      <tr><td>トッピング①を乗せる</td><td>　　秒</td><td></td></tr>
+      <tr><td>トッピング②を乗せる</td><td>　　秒</td><td></td></tr>
+      <tr><td>仕上げ・整える</td><td>　　秒</td><td></td></tr>
+      <tr><td><strong>合計（1本）</strong></td><td><strong>　　秒（　分　秒）</strong></td><td></td></tr>
+    </table>
+    <h4>試作2回目（改善後）</h4>
+    <table>
+      <tr><th>フェーズ</th><th>所要時間</th><th>1回目との比較</th></tr>
+      <tr><td>材料を手元に並べる</td><td>　　秒</td><td>　秒 速くなった / 変わらず</td></tr>
+      <tr><td>ソフトクリーム本体を絞る</td><td>　　秒</td><td>　秒 速くなった / 変わらず</td></tr>
+      <tr><td>トッピング全工程</td><td>　　秒</td><td>　秒 速くなった / 変わらず</td></tr>
+      <tr><td><strong>合計</strong></td><td><strong>　　秒</strong></td><td><strong>　　秒短縮</strong></td></tr>
+    </table>
+    <div class="fill-box">クライアントの目標時間：　　　　秒
+1回目の実績：　　　　秒 → 要件を 満たした / 満たせなかった
+2回目の実績：　　　　秒 → 要件を 満たした / 満たせなかった
+時間短縮のために変えたこと：</div>
+    <div class="note-box">📊 なぜ「秒」で計るか：ピーク時は1時間に数十件の注文が入ります。1本60秒 vs 90秒では、ピーク時の行列の長さが倍近く変わります。提供時間はお客さんの「買いたい気持ち」を維持できるかに直結します。</div>
+
+    <h3>2. 品質確認（見た目・味・映え）</h3>
+    <h4>見た目の評価</h4>
+    <table>
+      <tr><th>チェック項目</th><th>評価（5段階）</th><th>コメント</th></tr>
+      <tr><td>色は想定通りか</td><td>1・2・3・4・5</td><td></td></tr>
+      <tr><td>高さ・形は想定通りか</td><td>1・2・3・4・5</td><td></td></tr>
+      <tr><td>トッピングのバランスは良いか</td><td>1・2・3・4・5</td><td></td></tr>
+      <tr><td>「撮りたくなる」と感じるか</td><td>1・2・3・4・5</td><td></td></tr>
+      <tr><td>映えの4要素が揃っているか</td><td>1・2・3・4・5</td><td></td></tr>
+    </table>
+    <h4>原価の再確認</h4>
+    <div class="fill-box">実際の原価合計（1本）：　　　　円
+設定売価　　：　　　　円
+実際の原価率：　　　　％
+→ 目標（30〜40%）に対して：□ OK　□ 要調整</div>
+
+    <h3>3. 今日の総括と中間プレゼンへの反映</h3>
+    <div class="fill-box">変えること①：
+変えること②：
+変えること③：
+
+このままにすること：
+
+中間プレゼン（6/25）でアピールするポイント：
+（例）「試作して○○という課題が見つかり、△△で解決しました」</div>
+
+    <h3>試作当日・終了後のタスク</h3>
+    <table>
+      <tr><th>タスク</th><th>担当</th><th>期限</th><th>☐</th></tr>
+      <tr><td>撮影写真をチームLINEで共有</td><td>撮影担当</td><td>当日中</td><td>☐</td></tr>
+      <tr><td>試作報告書（このシート）完成</td><td>記録担当</td><td>翌日中</td><td>☐</td></tr>
+      <tr><td>変更点をコンセプトシートに反映</td><td>全員</td><td>6/19まで</td><td>☐</td></tr>
+      <tr><td>プレゼンで使う写真を3枚選ぶ</td><td>全員</td><td>6/19まで</td><td>☐</td></tr>
+    </table>
+  </div>
+</section>
+
+<!-- =============================================== -->
+<!-- PHASE 5 -->
+<!-- =============================================== -->
+<div class="phase-banner">🏆 フェーズ5：コンペティション ─ 中間（6/25）・最終（7/24）</div>
+
+<!-- 07 プレゼン評価シート -->
+<section class="doc-section" id="s07">
+  <div class="doc-header">
+    <div class="doc-num">07</div>
+    <div class="doc-title-block">
+      <h2>プレゼン評価シート</h2>
+      <div class="subtitle">中間プレゼンテーション（6月25日・対面・福岡ECO）</div>
+    </div>
+    <span class="doc-badge badge-eval">評価シート</span>
+  </div>
+  <div class="doc-body">
+    <div class="warn-box">⚠️ このプレゼンで<strong>約半数（5〜6チーム）に絞り込み</strong>、7/24最終コンペ進出チームを決定します。7/24最終コンペ用の評価シートは別途作成します。</div>
+    <p><strong>審査員名：</strong>＿＿＿＿＿＿＿＿＿＿</p>
+    <hr>
+
+    <h3>評価の3つの視点</h3>
+    <ol>
+      <li><strong>実現性</strong>─ カフェで本当に作れるか・売れるか</li>
+      <li><strong>映え力</strong>─ お客さんが自然と写真を撮りたくなるか</li>
+      <li><strong>伝える力</strong>─ プレゼンで相手に魅力が伝わったか</li>
+    </ol>
+
+    <h3>チーム別 評価シート（各チームに1枚使用）</h3>
+    <p><strong>チーム名：</strong>＿＿＿＿＿＿＿＿＿＿＿＿　（発表順：　　番）</p>
+
+    <h4>A. 映えの設計（30点）</h4>
+    <table>
+      <tr><th>評価項目</th><th>配点</th><th>得点</th><th>コメント</th></tr>
+      <tr><td>色・形・トッピングが「撮りたい」と思えるか</td><td>10点</td><td>/10</td><td></td></tr>
+      <tr><td>ターゲットに刺さる「ストーリー」があるか</td><td>10点</td><td>/10</td><td></td></tr>
+      <tr><td>動物園という「文脈」が活きているか</td><td>10点</td><td>/10</td><td></td></tr>
+      <tr><td><strong>A 小計</strong></td><td><strong>30点</strong></td><td><strong>/30</strong></td><td></td></tr>
+    </table>
+    <h4>B. 商品設計（30点）</h4>
+    <table>
+      <tr><th>評価項目</th><th>配点</th><th>得点</th><th>コメント</th></tr>
+      <tr><td>材料・製法が動物園カフェで実現できるか</td><td>10点</td><td>/10</td><td></td></tr>
+      <tr><td>価格設定に根拠があり、ターゲットが払える範囲か</td><td>10点</td><td>/10</td><td></td></tr>
+      <tr><td>原価率が適切に考慮されているか</td><td>10点</td><td>/10</td><td></td></tr>
+      <tr><td><strong>B 小計</strong></td><td><strong>30点</strong></td><td><strong>/30</strong></td><td></td></tr>
+    </table>
+    <h4>C. プレゼンテーション（20点）</h4>
+    <table>
+      <tr><th>評価項目</th><th>配点</th><th>得点</th><th>コメント</th></tr>
+      <tr><td>ターゲットとコンセプトが明確に伝わったか</td><td>10点</td><td>/10</td><td></td></tr>
+      <tr><td>全員が発表に関わっていたか</td><td>5点</td><td>/5</td><td></td></tr>
+      <tr><td>聞き手を引きつける工夫があったか</td><td>5点</td><td>/5</td><td></td></tr>
+      <tr><td><strong>C 小計</strong></td><td><strong>20点</strong></td><td><strong>/20</strong></td><td></td></tr>
+    </table>
+    <h4>D. 独自性・驚き（20点）</h4>
+    <table>
+      <tr><th>評価項目</th><th>配点</th><th>得点</th><th>コメント</th></tr>
+      <tr><td>「これは見たことない」という新しさがあるか</td><td>10点</td><td>/10</td><td></td></tr>
+      <tr><td>動物園ならではのアイデアになっているか</td><td>10点</td><td>/10</td><td></td></tr>
+      <tr><td><strong>D 小計</strong></td><td><strong>20点</strong></td><td><strong>/20</strong></td><td></td></tr>
+    </table>
+    <div class="fill-box">合計　　　　　　：　　　／100点
+
+審査員コメント（良かった点・改善点・応援の言葉）：</div>
+
+    <h3>全チーム集計表</h3>
+    <table>
+      <tr><th>チーム</th><th>A映え/30</th><th>B商品/30</th><th>Cプレゼン/20</th><th>D独自性/20</th><th>合計/100</th><th>順位</th></tr>
+      <tr><td>1</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>2</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>3</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>4</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>5</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>6</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>7</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>8</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+    </table>
+
+    <h3>当日タイムライン（6/25 10:00〜）</h3>
+    <table>
+      <tr><th>時刻</th><th>内容</th><th>担当</th></tr>
+      <tr><td>10:00</td><td>オープニング・審査員紹介</td><td>関口先生</td></tr>
+      <tr><td>10:05</td><td>コンペルール説明（中間選考である旨・絞り込み基準を伝える）</td><td>橋本</td></tr>
+      <tr><td>10:10〜</td><td>各チーム発表（5分×チーム数）</td><td>学生</td></tr>
+      <tr><td>発表終了後</td><td>審査員による集計・協議（10〜15分）</td><td>橋本が集計補助</td></tr>
+      <tr><td>集計後</td><td><strong>通過チーム（5〜6チーム）発表・総評</strong></td><td>審査員＋関口先生</td></tr>
+      <tr><td>最後</td><td>橋本より一言・写真撮影・最終コンペ（7/24）への橋渡し</td><td>橋本</td></tr>
+    </table>
+
+    <h3>審査員へのブリーフィングメモ（コンペ前に共有）</h3>
+    <div class="note-box">
+      <strong>審査のポイント（3つ）</strong><br>
+      ① <strong>動物園カフェで本当に作れそうか？</strong><br>
+      ② <strong>お客さんが「撮りたい」と思えるか？</strong><br>
+      ③ <strong>「なぜこの値段か」が説明できているか？</strong><br><br>
+      ご不明な点は橋本（ATARAYO）までお声がけください。
+    </div>
+  </div>
+</section>
+
+<!-- 08 コンペスクリプト -->
+<section class="doc-section" id="s08">
+  <div class="doc-header">
+    <div class="doc-num">08</div>
+    <div class="doc-title-block">
+      <h2>中間プレゼン授業スクリプト</h2>
+      <div class="subtitle">6月25日（木）10:00〜｜対面・福岡ECO</div>
+    </div>
+    <span class="doc-badge badge-script">授業スクリプト</span>
+  </div>
+  <div class="doc-body">
+    <div class="warn-box">⚠️ <strong>コンペは2段階制。</strong>6/25は中間プレゼン（絞り込み）、7/24が最終プレゼン（本番）です。このスクリプトは6/25用です。</div>
+    <div class="note-box">📌 関口先生が話す言葉は「▶ 関口：」、橋本の発言は「▶ 橋本：」、ワーク進行は「🎯 ワーク：」で表記。</div>
+
+    <div class="time-block">▶ [00:00〜08:00] オープニング・審査員紹介（8分）</div>
+    <div class="script-block">
+      <span class="script-speaker sp-sekiguchi">▶ 関口：</span>「みなさん、今日がいよいよ本番です。この授業でやってきたこと──映えの分析、原価計算、視察、プレゼン練習。全部、今日のためにあった。」
+    </div>
+    <p>→ 橋本が審査員を紹介・誘導。宮崎さんから一言挨拶。</p>
+    <p>→ 各チームの代表者がくじを引いて発表順を決定。関口が板書。</p>
+
+    <div class="time-block">▶ [08:00〜12:00] コンペルール説明（4分）</div>
+    <p><span class="script-speaker sp-slide">【スライド】</span>発表の必須内容</p>
+    <table>
+      <tr><th>#</th><th>発表に含めること</th></tr>
+      <tr><td>①</td><td>ターゲット：誰に食べてほしいか</td></tr>
+      <tr><td>②</td><td>コンセプト：「○○なソフトクリーム」一言で</td></tr>
+      <tr><td>③</td><td>商品設計：色・形・トッピング・価格（原価率も）</td></tr>
+      <tr><td>④</td><td>映えポイント：なぜSNSで拡散されるか</td></tr>
+    </table>
+
+    <div class="time-block">▶ [12:00〜72:00] 各チーム発表（60分）</div>
+    <div class="script-block">
+      <span class="script-speaker sp-work">🎯 ワーク：</span>1チーム5分＋質疑1分＋移動1分。橋本がタイマー管理（4分30秒でサイン）。橋本は評価シートの配布・回収・集計を担当。
+    </div>
+
+    <div class="time-block">▶ [72:00〜82:00] 審査・集計タイム（10分）</div>
+    <div class="script-block">
+      <span class="script-speaker sp-sekiguchi">▶ 関口：</span>「ただいま審査員が集計中です。この間に、チームで今日の自分たちの発表を振り返ってください。①うまくいったこと ②審査員の反応で気になったこと ③実際に商品化されたとしたらまず直したいこと」
+    </div>
+
+    <div class="time-block">▶ [82:00〜87:00] 結果発表・総評（5分）</div>
+    <p>→ 3位から順番に発表（または全チームを読み上げて最後に通過チーム発表）。</p>
+    <p>→ 宮崎さんが審査員代表として総評（2〜3分）。</p>
+    <div class="script-block">
+      <span class="script-speaker sp-sekiguchi">▶ 関口：</span>「今日が終わりじゃない。優勝したアイデアは、宮崎さんたちが実際に商品化を検討してくださいます。今日の発表の内容が、本当のメニューになるかもしれない。」
+    </div>
+    <div class="script-block">
+      <span class="script-speaker sp-sekiguchi" style="background:var(--blue-pale);color:var(--blue);">▶ 橋本：</span>「今日まで本当によく頑張りました。1回目は『きれいなやつ』だったのが、今日は『原価率○%でターゲットは○○、背景には動物園の○○を使う』と言えるようになった。これはすごいことです。このプロジェクトで身につけた力は、動物の仕事にも絶対役立ちます。」
+    </div>
+
+    <div class="time-block">▶ [87:00〜90:00] クロージング（3分）</div>
+    <p>→ 関口が一言コメントを残して解散。7/24最終コンペへの橋渡し。</p>
+
+    <h3>撮影・記録のポイント（橋本向け）</h3>
+    <ul>
+      <li>各チームが発表しているシーン（資料と学生の顔が両方入るとベスト）</li>
+      <li>審査員が学生の発表を聞いているシーン</li>
+      <li>結果発表の瞬間・通過チームのリアクション</li>
+      <li>宮崎さんが学生に話しかけているシーン</li>
+      <li>最後の集合写真</li>
+    </ul>
+  </div>
+</section>
+
+</main>
+
+<!-- フッター -->
+<footer style="background:var(--green-dark);color:#a8d5b5;text-align:center;padding:20px;font-size:12px;margin-top:24px;">
+  福岡ECO動物海洋専門学校 × 福岡市動物公園 ソフトクリーム映えPJ　／　作成：橋本花織（ATARAYO）　／　2026年4月
+</footer>
+
+<button class="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+</body>
+</html>
